@@ -1,0 +1,54 @@
+{% extends "studentregister/base.html" %}
+
+{% block content %}
+<style>
+    body {
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 0 10px;
+        background: lightskyblue;
+    }
+    </style>
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Student List</h2>
+        <a href="{% url 'student_insert' %}" class="btn btn-outline-success">
+            <i class="fas fa-plus"></i> Add New
+        </a>
+    </div>
+    <table class="table table-borderless table-responsive-md">
+        <thead class="border-bottom font-weight-bold">
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student_list %}
+            <tr>
+                <td style="vertical-align: middle;">{{ student.fullname }}</td>
+                <td style="vertical-align: middle;">{{ student.email }}</td>
+                <td style="vertical-align: middle;">{{ student.password }}</td>
+                <td style="vertical-align: middle;">
+                    <a href="{% url 'student_update' student.id %}" class="btn btn-secondary">
+                        <i class="far fa-edit"></i> Edit
+                    </a>
+                    <form action="{% url 'student_delete' student.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">
+                            <i class="far fa-trash-alt"></i> Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
+

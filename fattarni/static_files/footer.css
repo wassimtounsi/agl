@@ -1,0 +1,38 @@
+.fill {
+    background-color: #f5f5f5;
+    font-family: monospace;
+    padding: 30px;
+    text-align: center;
+}
+
+.fill h2 {
+    color: lightskyblue;
+}
+
+.fill p {
+    font-size: 16px;
+    color: #333;
+}
+
+.fill ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fill ul li {
+    margin-bottom: 10px;
+}
+
+.fill a {
+    color: lightskyblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fill a:hover {
+    text-decoration: underline;
+}
+.icon {
+    height: 30px;
+    width: 30px;
+}

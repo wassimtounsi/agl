@@ -1,0 +1,216 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <style>
+      *{
+    font-family: monospace;
+    text-decoration: none;
+  }
+  .navbar {
+          background: white;
+          border-radius: 15px;
+          font-family: monospace;
+          padding-right: 30px;
+          padding-left: 30px;
+      }
+      .navdiv {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+  
+      .logo a {
+          font-size: 40px;
+          font-weight: 600;
+          color: black;
+          font-family: monospace;
+      }
+  
+      .ghost {
+          width: 70px;
+          height: 70px;
+      }
+  
+      li {
+          list-style: none;
+          display: inline-block;
+      }
+  
+      li a {
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+          margin-right: 25px;
+          text-decoration: none; 
+      }
+  
+      button {
+          background-color: lightskyblue;
+          margin-left: 10px;
+          border-radius: 10px;
+          padding: 10px;
+          width: 90px;
+          color: white;
+          border: none;
+          font-family: monospace;
+      }
+  
+      button a {
+          color: white;
+          font-weight: bold;
+          font-size: 15px;
+          text-decoration: none; 
+      }
+      #submit-today-menu,#submit-tomorrow-menu{
+        color: white;
+          font-weight: bold;
+          font-size: 15px;
+          text-decoration: none;
+      }
+      footer {
+        color: black;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+      .fill {
+    background-color: #f5f5f5;
+    font-family: monospace;
+    padding: 30px;
+    text-align: center;
+}
+
+.fill h2 {
+    color: lightskyblue;
+}
+
+.fill p {
+    font-size: 16px;
+    color: #333;
+}
+
+.fill ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fill ul li {
+    margin-bottom: 10px;
+}
+
+.fill a {
+    color: lightskyblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.fill a:hover {
+    text-decoration: underline;
+}
+.icon {
+    height: 30px;
+    width: 30px;
+}
+        body{background-color: #f9f9f9;}
+        /* Additional CSS for submit buttons and message */
+        .menu-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .menu-item textarea {
+            width: calc(100% - 100px); /* Adjust the width of the textarea */
+            height: 100px;
+            resize: none;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 5px; /* Add border radius */
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        .menu-item button {
+            width: 100px; /* Set the width of the button */
+            height: 40px; /* Set the height of the button */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add border radius */
+            cursor: pointer; /* Add cursor pointer on hover */
+            transition: background-color 0.3s ease; /* Add transition effect */
+        }
+
+        /* Message styling */
+        .message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text color */
+            padding: 20px;
+            border-radius: 5px; /* Add border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add box shadow */
+            z-index: 999; /* Ensure it's on top of other elements */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="navdiv">
+        <div class="logo"><a href="{% url 'home' %}">Fattarni</a></div>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'admin_menu' %}">Add menu</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </div>
+</nav>
+<br><br><br><br><br>
+<section id="tomorrow-menu" class="menu-section">
+    <div class="container">
+        <h2>Tomorrow's Menu</h2>
+        <form method="post" action="{% url 'admin_menu' %}">
+            <div class="menu-item">
+                {% csrf_token %}
+                <textarea id="tomorrow-menu-description" name="menu" placeholder="Enter menu description"></textarea>
+                <button type="submit" id="submit-tomorrow-menu">Submit</button>
+            </div>
+        </form>
+        {% if message %}
+        <div class="message">{{ message }}</div>
+        {% endif %}
+    </div>
+</section>
+
+
+<div class="fill">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or need assistance, feel free to contact us:</p>
+    <ul>
+        <li>Email: Fattarni@gmail.com</li>
+        <li>Phone: +216 97047135</li>
+        <li>Address: Bizerte,Bizerte</li>
+    </ul>
+    <p>Follow us on social media:</p>
+    <ul>
+        <li><a href="#"><img class="icon" src="{% static 'facebook.png' %}" alt="">Facebook</a></li>
+        <li><a href="#"><img class="icon" src="{% static 'twitter.png' %}" alt="">X</a></li>
+        <li><a href="#"><img class="icon" src="{% static 'instagram.png' %}" alt="">Instagram</a></li>
+    </ul>
+</div>
+</body>
+</html>

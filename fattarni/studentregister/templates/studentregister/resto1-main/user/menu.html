@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="{% static 'home-style.css' %}" />
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+    <style>
+        body {
+            background-color: lightblue;;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-section {
+            margin-top: 120px; 
+            text-align: center;
+        }
+
+        .menu-wrapper {
+            height: 180px;
+            background-color: aqua;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 60px;
+        }
+
+        .menu {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color:#666666;
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo">
+                <a href="{% url 'home' %}">Fattarni</a>
+            </div>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'user_menu' %}">menu</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="menu-section">
+        <div class="menu-wrapper">
+            {% if menu_items %}
+                {% with latest_menu=menu_items.last %}
+                <h2>For {{ latest_menu.submission_date|date:"D, d M Y" }} this is the menu</h2>
+                <div class="menu">
+                    {{ latest_menu.menu }}
+                </div>
+                {% endwith %}
+            {% else %}
+                <p>No menu items available.</p>
+            {% endif %}
+        </div>
+    </section>
+    <footer>
+        <div class="fill">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to contact us:</p>
+            <ul>
+                <li>Email: Fattarni@gmail.com</li>
+                <li>Phone: +216 97047135</li>
+                <li>Address: Bizerte, Bizerte</li>
+            </ul>
+            <p>Follow us on social media:</p>
+            <ul>
+                <li><a href="#"><img class="icon" src="{% static 'facebook.png' %}" alt="" />Facebook</a></li>
+                <li><a href="#"><img class="icon" src="{% static 'twitter.png' %}" alt="" />Twitter</a></li>
+                <li><a href="#"><img class="icon" src="{% static 'instagram.png' %}" alt="" />Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

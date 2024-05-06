@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+    <style>
+      .team-container{
+        padding: 50px;
+        background-color: #f9f9f9;
+        text-align: center;
+        font-family: monospace;
+      }
+
+      .all_the_team{
+        display: flex;
+        justify-content:space-around;
+      }      
+      .about-container {
+        padding: 50px;
+        background-color: #f9f9f9;
+        text-align: center;
+        font-family: monospace;
+      }
+
+      .about-content  {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about-content h1 {
+        color: #333;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .about-content h2 {
+        color: lightskyblue;
+        font-size: 2em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+
+      .about-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .about-content ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      .about-content li {
+        margin-bottom: 10px;
+      }
+      .about-content :hover {
+        text-decoration: underline;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navdiv">
+          <div class="logo"><a href="{% url 'home' %}">Fattarni</a></div>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'user_menu' %}">menu</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="about-container">
+        <div class="about-content">
+          <h1>About Fattarni</h1>
+          <p>
+            A diligent student with a passion for web development embarked on a
+            mission to enhance the collage experience for both teachers and
+            students alike by creating a dedicated website. This website wasn't
+            just any platform—it was meticulously designed to streamline the
+            reservation process for collage facilities and resources
+          </p>
+          <p>
+            Understanding the time constraints faced by educators and the
+            ever-growing demands on student schedules, the student implemented
+            an intuitive reservation system on the website
+          </p>
+          <p>
+            This system allowed teachers to effortlessly secure time and food
+            for classes, meetings, or events, eliminating the hassle of manual
+            booking procedures. Simultaneously, students found themselves
+            empowered to reserve resources for projects and extracurricular
+            activities with ease...
+          </p>
+
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is to save time and reduce restaurant overcrowding.
+            We're using technology and innovative solutions like online
+            reservations and queue management to streamline dining experiences.
+            <br />
+            <strong
+              >Our goal is a dining landscape where every meal is
+              enjoyabl</strong
+            >
+          </p>
+
+          <h2>Meet Our Team</h2>
+        </div>
+      </div>
+        
+          <div class="team-container">
+            <div class="all_the_team">
+              <div>
+                <h4>moomen hidri</h4>
+                <img
+                  src="{% static '/505cabf0-7b27-446e-a4e8-7c00da337e6c.jpg' %}"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h4>Ghofrane Marnissi</h4>
+                <img
+                  src="{% static '/rsz_125976220_3597255787025693_6535201732088768831_n.jpg' %}"
+                  alt=""
+                />
+              </div>
+              
+              <div >
+                <h4>Nour Boujemaa</h4>
+                <img
+                  src="{% static '/rsz_1271001944_2304904659660427_7899912334218476030_n.jpg' %}"
+                  alt=""
+                />
+              </div>
+
+
+              <div >
+                <h4>nader may</h4>
+                <img
+                  src="{% static '/rsz_1rsz_1412144060_1480571939524643_2738418539434978783_n (1).jpg' %}"
+                  alt=""
+                />
+              </div>
+
+
+              <div >
+                <h4>wassim tounsi</h4>
+                <img
+                  src="{% static '/rsz_365653880_3028631113934224_2702326886477675516_n.jpg' %}"
+                  alt=""
+                />
+              </div>
+
+
+            </div>
+          </div>
+        
+        <div class="about-container">
+          <div class="about-content">
+          <h2>Our Values</h2>
+          <p>At Fattarni, our values guide everything we do:</p>
+          <ul class="value">
+            <li>
+              <strong>Passion:</strong> Our passion drives this project to reshape dining experiences.
+            </li><br><br>
+            <li>
+              <strong>Inclusivity:</strong> Inclusivity is at the heart of our project, ensuring that everyone, regardless of background or circumstance, can enjoy seamless dining experiences.
+            </li><br><br>
+            <li>
+              <strong>Quality:</strong> Quality is paramount in our endeavor, guaranteeing excellence in every aspect of the dining experience, from service to restaurant.
+            </li><br><br>
+            <li>
+              <strong>Community:</strong> Our project is deeply rooted in community, fostering connections and enriching the dining experience for all.
+            </li><br><br>
+            <li>
+              <strong>Innovation:</strong> Innovation propels our project forward, constantly pushing boundaries to redefine and enhance the better experience for our student.
+            </li><br><br>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <div class="fill">
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions or need assistance, feel free to contact us:
+      </p>
+      <ul>
+        <li>Email: Fattarni@gmail.com</li>
+        <li>Phone: +216 97047135</li>
+        <li>Address: Bizert,Bizert</li>
+      </ul>
+      <p>Follow us on social media:</p>
+      <ul>
+        <li>
+          <a href="#"><img class="icon" src="{% static 'facebook.png' %}" alt="" />Facebook</a>
+        </li>
+        <li>
+          <a href="#"><img class="icon" src="{% static 'twitter.png' %}" alt="" />X</a>
+        </li>
+        <li>
+          <a href="#"
+            ><img class="icon" src="{% static 'instagram.png' %}" alt="" />Instagram</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

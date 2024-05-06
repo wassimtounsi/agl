@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home-style.css' %}" />
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'footer.css' %}" />
+</head>
+<body>
+<nav class="navbar">
+    <div class="navdiv">
+        <div class="logo">
+            <a href="{% url 'home' %}">Fattarni</a>
+        </div>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'user_menu' %}">menu</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="lunch_time">
+        <h1>Opening Time</h1>
+        <p>
+            Monday: 11:30 AM - 14:00 PM ==> 17:30 PM - 19:00 PM
+            <br /><br />
+            Tuesday: 11:30 AM - 14:00 PM ==> 17:30 PM - 19:00 PM
+            <br /><br />
+            Wednesday: 11:30 AM - 14:00 PM ==> 17:30 PM - 19:00 PM
+            <br /><br />
+            Thursday: 11:30 AM - 14:00 PM ==> 17:30 PM - 19:00 PM
+            <br /><br />
+            Friday: 11:30 AM - 14:00 PM ==> 17:30 PM - 19:00 PM
+            <br /><br />
+            Saturday: 11:30 AM - 14:00 PM ==> 17:30 PM - 19:00 PM
+        </p>
+    </div>
+    <div class="image">
+        <img src="{% static '195536826_2934770296760537_5413686044198588396_n.png' %}" alt="" />
+    </div>
+</div>
+
+<!-- footer -->
+<div class="fill">
+    <h2>Contact Us</h2>
+    <p>
+        If you have any questions or need assistance, feel free to contact us:
+    </p>
+    <ul>
+        <li>Email: Fattarni@gmail.com</li>
+        <li>Phone: +216 97047135</li>
+        <li>Address: Bizerte, Bizerte</li>
+    </ul>
+    <p>Follow us on social media:</p>
+    <ul>
+        <li>
+            <a href="#"><img class="icon" src="{% static 'facebook.png' %}" alt="" />Facebook</a>
+        </li>
+        <li>
+            <a href="#"><img class="icon" src="{% static 'twitter.png' %}" alt="" />Twitter</a>
+        </li>
+        <li>
+            <a href="#"><img class="icon" src="{% static 'instagram.png' %}" alt="" />Instagram</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

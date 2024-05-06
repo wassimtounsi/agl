@@ -1,0 +1,23 @@
+{% extends "studentregister/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+body {
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 10px;
+    background: lightskyblue;
+}
+</style>
+<form method="post" action="" autocomplete="off">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">
+        <i class="fas fa-database"></i> Submit
+    </button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.lunch_time{margin-top: 80px;}
+.lunch_time h1 {
+  text-align: center;
+}
+.lunch_time p {
+  text-align: center;
+  font-size: x-large;
+}
+.image img {
+  width: 500px;
+  
+}
+
+.menu{
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+}

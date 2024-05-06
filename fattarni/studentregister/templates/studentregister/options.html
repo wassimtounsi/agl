@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Title Here</title>
+<style>
+    body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .submit-btn {
+        margin-bottom: 10px;
+        text-align: center; /* Center-align the buttons */
+    }
+    .submit-btn a {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit text color */
+    }
+    .submit-btn button {
+        display: block; /* Display the buttons as blocks */
+        margin-bottom: 10px; /* Add some space between the buttons */
+        background-color: lightskyblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 30px 50px;
+        cursor: pointer;
+        font-size: 23px;
+        transition: background-color 0.3s;
+    }
+    .submit-btn button:hover {
+        background-color: skyblue;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="submit-btn">
+    <a href="{% url 'student_list' %}">
+        <button>List (CRUD)</button>
+    </a>
+</div>
+<div class="submit-btn">
+    <a href="{% url 'admin_menu' %}">
+        <button>Menu du jour</button>
+    </a>
+</div>
+
+
+</body>
+</html>
